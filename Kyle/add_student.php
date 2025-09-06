@@ -5,9 +5,8 @@ $name = $gender = $date_of_birth = $age = $civil_status = $religion = $email = $
 $success_message = "";
 $error_message = "";
 
-// Check if form is submitted
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate and sanitize input data
     $name = mysqli_real_escape_string($conn, $_POST['name']);
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
     $date_of_birth = mysqli_real_escape_string($conn, $_POST['date_of_birth']);
@@ -31,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $file_name = uniqid() . '.' . $file_extension;
         $target_file = $target_dir . $file_name;
         
-        // Check if image file is an actual image
+
         $check = getimagesize($_FILES["photo"]["tmp_name"]);
         if ($check !== false) {
             if (move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)) {
@@ -44,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     
-    // Insert data into database
+
     if (empty($error_message)) {
         $sql = "INSERT INTO students (name, gender, date_of_birth, age, civil_status, religion, email, contact_no, address, place_of_birth, citizenship, photo)
                 VALUES ('$name', '$gender', '$date_of_birth', '$age', '$civil_status', '$religion', '$email', '$contact_no', '$address', '$place_of_birth', '$citizenship', '$photo')";
@@ -475,14 +474,12 @@ $conn->close();
 
         // Form submission with SweetAlert confirmation
         document.getElementById('submitBtn').addEventListener('click', function() {
-            // Validate form
             const form = document.getElementById('addStudentForm');
             if (!form.checkValidity()) {
                 form.reportValidity();
                 return;
             }
 
-            // Show confirmation dialog
             Swal.fire({
                 title: 'Are you sure?',
                 text: "Do you want to add this student to the system?",
@@ -493,13 +490,12 @@ $conn->close();
                 confirmButtonText: 'Yes, add student!'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    // Submit the form
                     form.submit();
                 }
             });
         });
 
-        // Show success/error messages with SweetAlert
+ 
         <?php if (!empty($success_message)): ?>
             Swal.fire({
                 icon: 'success',
