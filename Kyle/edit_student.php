@@ -433,7 +433,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             
                             <div class="mb-3">
                                 <label class="form-label field-required"><i class="fas fa-phone input-icon"></i> Contact Number</label>
-                                <input type="tel" name="Contact_no" value="<?= $student['Contact_no'] ?>" class="form-control" required>
+                                <input type="tel" name="Contact_no" value="<?= $student['Contact_no'] ?>" class="form-control" max-length='11' required>
                             </div>
                             
                             <div class="mb-3">

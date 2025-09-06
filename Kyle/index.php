@@ -183,7 +183,7 @@ body {
 
 /* School Info Section */
 .school-info-section {
-    background: var(--gradient-school);
+     background: linear-gradient(90deg, #4e73df 0%, #2a3e9d 100%);
     color: white;
     align-items: center;
     justify-content: center;
@@ -296,7 +296,7 @@ body {
 }
 
 .form-title {
-    color: var(--primary-color);
+    color: #4e73df;
     font-weight: 600;
     margin-bottom: 0.5rem;
 }
@@ -345,7 +345,7 @@ body {
 }
 
 .btn-login {
-    background: var(--gradient-school);
+    background: linear-gradient(90deg, #4e73df 0%, #2a3e9d 100%);
     border: none;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
