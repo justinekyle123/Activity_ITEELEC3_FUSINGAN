@@ -214,7 +214,7 @@
 
         <!-- Dashboard Cards -->
         <div class="row mb-4">
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="stat-card bg-gradient-primary dashboard-card text-white p-3">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -228,7 +228,7 @@
                 </div>
             </div>
             
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="stat-card bg-gradient-success dashboard-card text-white p-3">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -242,7 +242,7 @@
                 </div>
             </div>
             
-            <div class="col-xl-3 col-md-6 mb-4">
+            <div class="col-xl-4 col-md-6 mb-4">
                 <div class="stat-card bg-gradient-info dashboard-card text-white p-3">
                     <div class="d-flex justify-content-between">
                         <div>
@@ -256,24 +256,7 @@
                 </div>
             </div>
             
-            <div class="col-xl-3 col-md-6 mb-4">
-                <div class="stat-card bg-gradient-warning dashboard-card text-white p-3">
-                    <div class="d-flex justify-content-between">
-                        <div>
-                            <div class="text-xs font-weight-bold text-uppercase mb-1">Average Age</div>
-                            <div class="h5 mb-0">
-                                <?php 
-                                $avg_age = $conn->query("SELECT AVG(Age) as avg_age FROM students")->fetch_assoc()['avg_age'];
-                                echo round($avg_age, 1);
-                                ?>
-                            </div>
-                        </div>
-                        <div class="align-self-center">
-                            <i class="fas fa-birthday-cake fa-2x"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
 
         <!-- Charts Section -->
