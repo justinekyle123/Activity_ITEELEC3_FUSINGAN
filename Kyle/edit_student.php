@@ -199,6 +199,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             cursor: pointer;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
+
+         .edit-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: none;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        
+        .edit-card:hover {
+            transform: translateY(-5px);
+        }
         
         .form-section {
             margin-bottom: 25px;

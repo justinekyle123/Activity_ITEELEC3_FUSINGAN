@@ -116,7 +116,7 @@
             margin-bottom: 1.5rem;
         }
          .footer {
-            background: var(--dark);
+            background: #2e3a59;
             color: white;
             padding: 20px 0;
             margin-top: 40px;

@@ -85,6 +85,7 @@ $conn->close();
             background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x:hidden;
         }
         
         .navbar {
@@ -93,6 +94,7 @@ $conn->close();
             position: fixed;
             width: 100vw;
             top:0;
+            z-index: 999;
         }
          .navbar-brand {
             font-weight: bold;
@@ -119,6 +121,34 @@ $conn->close();
         
         .form-body {
             padding: 2rem;
+        }
+         .edit-card {
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border: none;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+            margin-bottom:5%;
+        }
+         .edit-card:hover {
+            transform: translateY(-5px);
+        }
+         .card-header {
+            background: linear-gradient(120deg, #4e73df, #2a3e9d);
+            color: white;
+            padding: 20px 25px;
+            position: relative;
+        }
+        
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #ff6b6b, #ff9e9e);
         }
         
         .section-title {
@@ -208,11 +238,14 @@ $conn->close();
             margin-left: 4px;
         }
          .footer {
-            background: var(--dark);
+            background: #2e3a59;
             color: white;
             padding: 20px 0;
             margin-top: 40px;
             border-radius: 20px 20px 0 0;
+            width: 100vw;
+            position: absolute;
+           left:0;
         }
         
         .form-section {
@@ -257,11 +290,11 @@ $conn->close();
     </nav>
 
     <div class="container form-container">
-        <div class="student-form">
-            <div class="form-header">
-                <h2 class="mb-0"><i class="fas fa-user-plus me-2"></i>Add New Student</h2>
-                <p class="mb-0">Fill in the details below to add a new student to the system</p>
+        <div class="card edit-card">
+            <div class="card-header">
+                <h4 class="m-0"><i class="fas fa-user-edit me-2"></i> Edit Student Profile</h4>
             </div>
+            <div class="card-body p-4">
             
             <div class="form-body">
                 <form id="addStudentForm" method="POST" action="add_student.php" enctype="multipart/form-data">
